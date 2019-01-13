@@ -1,0 +1,13 @@
+{
+  "name": "@hecom/badge",
+  "version": "0.0.1",
+  "description": "Badge UI Component",
+  "main": "dist/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:hecom/badge.git"
+  },
+  "author": "Xiaosong Gao",
+  "license": "MIT"
+}
