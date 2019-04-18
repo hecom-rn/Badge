@@ -1,21 +1,20 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import PropTypes from 'prop-types';
+import { Text, View, StyleProp, ViewStyle } from 'react-native';
 
-export default class extends React.PureComponent {
-    static propTypes = {
-        count: PropTypes.number,
-        maxCount: PropTypes.number,
-        radius: PropTypes.number,
-        bgColor: PropTypes.string,
-        outSpace: PropTypes.number,
-        outBgColor: PropTypes.string,
-        style: PropTypes.any,
-    };
+export interface Props {
+    count: number;
+    maxCount: number;
+    radius: number;
+    bgColor: string;
+    outSpace?: number;
+    outBgColor: string;
+    style?: StyleProp<ViewStyle>;
+}
 
+export default class extends React.PureComponent<Props> {
     static defaultProps = {
-        outBgColor: 'white',
         bgColor: '#e15151',
+        outBgColor: 'white',
     };
 
     render() {
@@ -33,7 +32,7 @@ export default class extends React.PureComponent {
         }
     }
 
-    _renderOut = (innerView, style) => {
+    protected _renderOut(innerView, style) {
         const {radius, outSpace, outBgColor} = this.props;
         const viewStyle = {
             padding: outSpace,
@@ -46,9 +45,9 @@ export default class extends React.PureComponent {
                 {innerView}
             </View>
         );
-    };
+    }
 
-    _renderInnerNoCount = (style) => {
+    protected _renderInnerNoCount(style) {
         const {radius, bgColor} = this.props;
         const badgeStyle = {
             width: radius * 2,
@@ -58,9 +57,9 @@ export default class extends React.PureComponent {
             overflow: 'hidden',
         };
         return <View style={[badgeStyle, style]} />;
-    };
+    }
 
-    _renderInnerCount = (style) => {
+    protected _renderInnerCount(style) {
         const {count, maxCount, radius, bgColor} = this.props;
         const showCount = count > maxCount ? maxCount + '+' : count;
         const layoutStyle = {
@@ -85,5 +84,5 @@ export default class extends React.PureComponent {
                 </Text>
             </View>
         );
-    };
+    }
 }

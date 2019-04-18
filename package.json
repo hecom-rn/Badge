@@ -1,13 +1,24 @@
 {
   "name": "@hecom/badge",
   "version": "1.0.0",
+  "private": false,
   "description": "Badge UI Component",
-  "main": "dist/index.js",
-  "scripts": {},
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "./node_modules/.bin/eslint . --ext .ts,.tsx"
+  },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:hecom/badge.git"
+    "url": "https://github.com/hecom-rn/Badge.git"
   },
   "author": "Xiaosong Gao",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.13",
+    "@types/react-native": "^0.57.45",
+    "eslint-plugin-automatic": "latest"
+  }
 }

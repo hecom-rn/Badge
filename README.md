@@ -1,6 +1,7 @@
 # Badge
 
 [![npm version](https://img.shields.io/npm/v/@hecom/badge.svg?style=flat)](https://www.npmjs.com/package/@hecom/badge)
+[![Build Status](https://travis-ci.org/hecom-rn/Badge.svg?branch=master)](https://travis-ci.org/hecom-rn/Badge)
 
 这是一个角标的UI组件，有四种可能：
 
