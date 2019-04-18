@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": false,
   "description": "Badge UI Component",
-  "main": "src/index.ts",
+  "main": "src/index.tsx",
   "scripts": {
     "test": "./node_modules/.bin/eslint . --ext .ts,.tsx"
   },
