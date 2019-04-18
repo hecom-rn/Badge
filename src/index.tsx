@@ -6,15 +6,18 @@ export interface Props {
     maxCount: number;
     radius: number;
     bgColor: string;
-    outSpace?: number;
+    outSpace: number;
     outBgColor: string;
+    innerVerticalSpace: number;
     style?: StyleProp<ViewStyle>;
 }
 
 export default class extends React.PureComponent<Props> {
     static defaultProps = {
         bgColor: '#e15151',
+        outSpace: 0,
         outBgColor: 'white',
+        innerVerticalSpace: 4,
     };
 
     render() {
@@ -73,7 +76,7 @@ export default class extends React.PureComponent<Props> {
             overflow: 'hidden',
         };
         const textStyle = {
-            fontSize: radius * 2 - 6,
+            fontSize: radius * 2 - this.props.innerVerticalSpace * 2,
             color: 'white',
             backgroundColor: 'transparent',
         };

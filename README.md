@@ -20,4 +20,5 @@
 * `bgColor: string`：数字的背景色。
 * `outSpace: number`：外层与内层直接的间隔。
 * `outBgColor: string`：外层的背景色。
+* `innerVerticalSpace: number`：数字与内层圆圈的上下边距，用于计算字号。
 * `style: any`：自定义外部样式。
