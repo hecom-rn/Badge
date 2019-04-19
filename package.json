@@ -1,6 +1,6 @@
 {
   "name": "@hecom/badge",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Badge UI Component",
   "main": "src/index.tsx",
