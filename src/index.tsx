@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleProp, ViewStyle } from 'react-native';
+import { Text, View, StyleProp, ViewStyle, TextStyle } from 'react-native';
 
 export interface Props {
     count: number;
@@ -10,6 +10,7 @@ export interface Props {
     outBgColor: string;
     innerVerticalSpace: number;
     style?: StyleProp<ViewStyle>;
+    textStyle?: StyleProp<TextStyle>;
 }
 
 export default class extends React.PureComponent<Props> {
@@ -63,7 +64,7 @@ export default class extends React.PureComponent<Props> {
     }
 
     protected _renderInnerCount(style) {
-        const {count, maxCount, radius, bgColor} = this.props;
+        const {count, maxCount, radius, bgColor, textStyle} = this.props;
         const showCount = count > maxCount ? maxCount + '+' : count;
         const layoutStyle = {
             height: radius * 2,
@@ -75,14 +76,14 @@ export default class extends React.PureComponent<Props> {
             paddingHorizontal: 2,
             overflow: 'hidden',
         };
-        const textStyle = {
+        const defTextStyle = {
             fontSize: radius * 2 - this.props.innerVerticalSpace * 2,
             color: 'white',
             backgroundColor: 'transparent',
         };
         return (
             <View style={[layoutStyle, style]}>
-                <Text style={[textStyle, textStyle]}>
+                <Text style={[defTextStyle, textStyle]}>
                     {showCount}
                 </Text>
             </View>
