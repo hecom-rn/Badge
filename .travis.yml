@@ -7,7 +7,7 @@ os:
 stages:
  - test
  - name: deploy
-   if: tag IS present
+   if: (branch = master) AND (tag =~ ^v)
 
 jobs:
  include:
@@ -17,5 +17,3 @@ jobs:
        provider: npm
        email: gaoxiaosong06@gmail.com
        api_key: "$NPM_TOKEN"
-       on:
-         tags: true
