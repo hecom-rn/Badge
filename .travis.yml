@@ -7,13 +7,15 @@ os:
 stages:
  - test
  - name: deploy
-   if: (branch = master) AND (tag =~ ^v)
+   if: (sender = gaoxiaosong) AND (tag =~ ^v)
 
 jobs:
- include:
-   - stage: test
-   - stage: deploy
-     deploy:
-       provider: npm
-       email: gaoxiaosong06@gmail.com
-       api_key: "$NPM_TOKEN"
+  include:
+    - stage: test
+    - stage: deploy
+      deploy:
+        provider: npm
+        email: gaoxiaosong06@gmail.com
+        api_key: "$NPM_TOKEN"
+        on:
+          tags: true
